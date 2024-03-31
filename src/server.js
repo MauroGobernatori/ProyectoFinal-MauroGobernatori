@@ -77,9 +77,8 @@ if(persistence == 'MONGO'){
     await initMongoDB();
 }
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
     developmentLogger.info(`Server running on port ${PORT}`);
-    // console.log(`Server running on port ${PORT}`)
 });

@@ -59,4 +59,8 @@ router.get('/current', current);
 
 router.get('/admin_panel', authRoleAdmin, admin_user_panel);
 
+router.get('/', async (req, res) => {
+    res.redirect('./login')
+});
+
 export default router;
