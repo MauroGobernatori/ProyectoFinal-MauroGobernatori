@@ -1,0 +1,31 @@
+paths:
+  /users/login:
+    post:
+      tags:
+      - Session
+      summary: Login to use the functions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/parameters/schemas/BodyLogin'
+        required: true
+      responses:
+          200:
+            description: Login successfull.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Session/Login'
+  /users/logout:
+    post:
+      tags:
+      - Session
+      summary: Logout of the session
+      responses:
+          200:
+            description: Logout successfull.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Session/Logout'

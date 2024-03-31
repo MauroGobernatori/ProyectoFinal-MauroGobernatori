@@ -1,0 +1,117 @@
+paths:
+  /products/create:
+    post:
+      tags:
+      - Products
+      summary: Product creation on the database
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/parameters/schemas/BodyNewProduct'
+        required: true
+      responses:
+          200:
+            description: Product created successfully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/PostNew'
+          404:
+            description: Validation error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/ValidationError'
+          500:
+            description: Server error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/NotFound'
+  /products/delete/{id}:
+    delete:
+      tags:
+      - Products
+      summary: Product deletion on the database
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Id of product to delete required
+          schema:
+            type: string
+      responses:
+          200:
+            description: Product deleted successfully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/PostDelete'
+  /products/update/{id}:
+    put:
+      tags:
+      - Products
+      summary: Product update on the database
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Id of product to update required
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/parameters/schemas/BodyNewProduct'
+      responses:
+          200:
+            description: Product updated successfully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/PostNew'
+          404:
+            description: Validation error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/ValidationError'
+          500:
+            description: Server error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/NotFound'
+  /products:
+    get:
+      tags:
+      - Products
+      summary: Get a list of all the products
+      responses:
+          200:
+            description: Getting all products successfull.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/GetAll'
+  /products/{id}:
+    get:
+      tags:
+      - Products
+      summary: Get a product by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: Id of product to be shown required
+          schema:
+            type: string
+      responses:
+          200:
+            description: Getting product by id successfull.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Products/GetById'

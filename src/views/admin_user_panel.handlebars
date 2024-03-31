@@ -1,0 +1,26 @@
+<button><a href="/profile">Go to Profile</a></button>
+<button onclick="deleteByConnection()">Delete By Connection</button>
+
+<table>
+    <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th></th>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <td>{{this.first_name}}</td>
+            <td>{{this.last_name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.role}}</td>
+            <td>
+                <button><a href='/users/premium/{{{this._id}}}'>Change role</a></button>
+                <button onclick="deleteUser('{{this._id}}')">Delete</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

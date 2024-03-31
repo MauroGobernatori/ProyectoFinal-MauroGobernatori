@@ -1,0 +1,64 @@
+components:
+  parameters:
+    schemas:
+      BodyNewProduct:
+        type: object
+        required:
+          - name
+          - description
+          - price
+          - stock
+          - role
+        properties:
+          name:
+            type: string
+            description: Name of the product
+          description:
+            type: string
+            description: Description of the product
+          price:
+            type: number
+            description: Price of the product
+          stock:
+            type: number
+            description: Current amount of items available of the product
+        example:
+          name: PlayStation 5
+          description: Sony newest console.
+          price: 800
+          stock: 25
+      BodyAddItem:
+        type: object
+        required:
+          - quantity
+        properties:
+          quantity:
+            type: number
+            description: The quantity of the product to add to the cart required
+        example:
+          quantity: 2
+      BodyUpdateQuantity:
+        type: object
+        required:
+          - quantity
+        properties:
+          quantity:
+            type: number
+            description: The new quantity of the product wanted required
+        example:
+          quantity: 1
+      BodyLogin:
+        type: object
+        required:
+          - email
+          - password
+        properties:
+          email:
+            type: text
+            description: Email of the user
+          password:
+            type: password
+            description: Password of the user
+        example:
+          email: mauro@mauro.com
+          password: '1234'

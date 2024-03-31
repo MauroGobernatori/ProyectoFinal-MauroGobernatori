@@ -1,0 +1,11 @@
+<h1>Current User</h1>
+
+{{#if _doc._id }}
+<ul>
+    <li>First name: {{ _doc.first_name }}</li>
+    <li>Last name: {{ _doc.last_name }}</li>
+    <li>Email: {{ _doc.email }}</li>
+    <li>Age: {{ _doc.age }}</li>
+    <li>Role: {{ _doc.role }}</li>
+</ul>
+{{/if}}

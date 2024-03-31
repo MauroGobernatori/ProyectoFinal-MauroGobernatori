@@ -1,0 +1,167 @@
+paths:
+  /cart/add_item/{cid}/{pid}:
+    put:
+      tags:
+      - Cart
+      summary: Add an item to the cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: Id of cart to add the product required
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          description: Id of the product to be added to the cart required
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/parameters/schemas/BodyAddItem'
+      responses:
+          200:
+            description: Item added to cart successfully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/ItemAdded'
+          # 404:
+          #   description: Validation error
+          #   content:
+          #     application/json:
+          #       schema:
+          #         $ref: '#/components/schema/Cart/ValidationError'
+          500:
+            description: Server error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/NotFound'
+  /cart/{cid}/purchase:
+    post:
+      tags:
+      - Cart
+      summary: Purchase the items on the cart and generate a ticket
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: Id of the cart to be bought
+          schema:
+            type: string
+      responses:
+          200:
+            description: Ticket generated successfully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/Purchase'
+          # 404:
+          #   description: Validation error
+          #   content:
+          #     application/json:
+          #       schema:
+          #         $ref: '#/components/schema/Cart/ValidationError'
+          500:
+            description: Server error
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/NotFound'
+  /cart/update_quantity/{cid}/{pid}:
+    put:
+      tags:
+      - Cart
+      summary: Update the quantity of an item in the cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: Id of the cart to be updated
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          description: Id of the product to be updated
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/parameters/schemas/BodyUpdateQuantity'
+      responses:
+          200:
+            description: Item quantity updated succesffully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/QuantityUpdate'
+  /cart/wipe/{cid}:
+    delete:
+      tags:
+      - Cart
+      summary: Wipe a cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: Id of the cart to be wiped
+          schema:
+            type: string
+      responses:
+          200:
+            description: Cart wiped successfully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/Wipe'
+  /cart/remove/{cid}/{pid}:
+    delete:
+      tags:
+      - Cart
+      summary: Remove a product from a cart
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: Id of the cart required
+          schema:
+            type: string
+        - in: path
+          name: pid
+          required: true
+          description: Id of the product required
+          schema:
+            type: string
+      responses:
+          200:
+            description: Product removed succesffully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/Remove'
+  /cart/{cid}:
+    get:
+      tags:
+      - Cart
+      summary: Get a cart by id
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          description: Id of the cart required
+          schema:
+            type: string
+      responses:
+          200:
+            description: Cart showed successfully.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schema/Cart/GetCart'

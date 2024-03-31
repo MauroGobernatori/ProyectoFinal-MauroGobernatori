@@ -1,0 +1,33 @@
+<div>Updating the Product {{name}}</div>
+
+<form id="update_form">
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{name}}">
+    <label for="description">Description</label>
+    <input type="text" name="description" value="{{description}}">
+    <label for="price">Price</label>
+    <input type="number" name="price" step=".01" value="{{price}}">
+    <label for="stock">Stock</label>
+    <input type="number" name="stock" value="{{stock}}">
+    <input type="text" name="owner" value="{{owner}}" hidden="hidden">
+    <input type="text" name="id" value="{{_id}}" hidden="hidden">
+    <input type="submit" value="Update Product">
+</form>
+
+<script>
+    const update_form = document.getElementById('update_form');
+
+    update_form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const o = {}
+        new FormData(update_form).forEach( (value, key) => o[key] = value);
+        await fetch(`../products/update/${update_form.id.value}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(o)
+        })
+    });
+
+</script>

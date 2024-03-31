@@ -1,0 +1,117 @@
+components:
+  schema:
+    Products:
+      PostNew:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Product Id
+          name:
+            type: string
+            description: Product name
+          description:
+            type: string
+            description: Product description
+          price:
+            type: number
+            description: Product price
+          stock:
+            type: number
+            description: Current amount of items available of the product
+          owner:
+            type: string
+            description: Id of the user that created the product
+        example:
+          id: 65dd1142de5e12b8ba43711e
+          name: PS5
+          description: 
+          price: 800
+          stock: 25
+          owner: admin
+      ValidationError:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Validation error
+      NotFound:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Server error
+      PostDelete:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Product deleted successfully.
+      GetAll:
+        type: object
+        properties:
+          message:
+            type: string
+            description: All products gotten successfully.
+      GetById:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Product gotten by id successfully.
+    Cart:
+      ItemAdded:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Item added to cart successfully.
+      Purchase:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Ticket generated successfully.
+      QuantityUpdate:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Item quantity updated succesffully.
+      Wipe:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Cart wiped successfully.
+      Remove:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Product removed succesffully.
+      GetCart:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Cart showed successfully.
+      NotFound:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Server error
+    Session:
+      Login:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Login successfull.
+      Logout:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Logout successfull.

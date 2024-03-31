@@ -1,0 +1,397 @@
+.arrow_up{
+    background: url('/images/arrow_up.png');
+    height: 32px;
+    width: 32px;
+    display: block;
+}
+
+.arrow_down{
+    background: url('../images/arrow_down.png');
+    height: 32px;
+    width: 32px;
+    display: block;
+}
+
+/* -------------- -------------- -------------- */
+/* Table Cart */
+.table_cart {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+  
+.table_cart td, .table_cart th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.table_cart tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.table_cart tr:hover {
+    background-color: #ddd;
+}
+
+.table_cart th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+/* -------------- -------------- -------------- */
+
+/* -------------- -------------- -------------- */
+/* Table Products */
+.table_products {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+  
+.table_products td, .table_products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.table_products tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.table_products tr:hover {
+    background-color: #ddd;
+}
+
+.table_products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+/* -------------- -------------- -------------- */
+
+/* -------------- -------------- -------------- */
+/* Forms */
+.form_create_product{
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.form_create_product input[type=text], .form_create_product input[type=number], .form_create_product select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form_create_product input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form_create_product input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.form_create_product h3{
+    margin: 10px 0;
+}
+
+.form_create_product .a{
+    margin: 15px 0;
+}
+
+.form_create_product a{
+    background-color: #008CBA;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+.form_create_product a:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #008CBA;
+}
+/* -------------- -------------- -------------- */
+
+/* -------------- -------------- -------------- */
+/* LOGIN */
+.form_login{
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.form_login input[type=email], .form_login input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form_login input[type=submit]{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form_login input[type=submit]:hover{
+    background-color: #45a049;
+}
+
+.form_login .a{
+    margin: 15px 0;
+}
+
+.form_login .button_a{
+    background-color: #008CBA;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+.form_login .button_a:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #008CBA;
+}
+
+.center_div{
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 25px 20px;
+}
+
+.center_div .button{
+    background-color: #008CBA;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+}
+
+.center_div .button:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #008CBA;
+}
+
+.center_div .button_a{
+    background-color: #008CBA;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+.center_div .button_a:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #008CBA;
+}
+/* -------------- -------------- -------------- */
+
+/* -------------- -------------- -------------- */
+/* PROFILE */
+.profile{
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.profile .information{
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+.profile .buttons{
+    margin: 5px 0;
+    padding: 25px 0;
+}
+
+.profile .buttons a{
+    background-color: #008CBA;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+.profile .buttons a:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #008CBA;
+}
+
+.profile .form_logout{
+    padding: 0;
+}
+
+.profile .form_logout input[type=submit]{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile .form_logout input[type=submit]:hover{
+    background-color: #45a049;
+}
+/* -------------- -------------- -------------- */
+
+/* -------------- -------------- -------------- */
+/* LOGOUT */
+.form_logout{
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.form_logout button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form_logout button:hover{
+    background-color: #45a049;
+}
+/* -------------- -------------- -------------- */
+
+/* -------------- -------------- -------------- */
+/* REGISTRATION */
+.form_register{
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.form_register input[type=text], .form_register input[type=number], .form_register input[type=email], .form_register input[type=password], .form_register select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form_register input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form_register input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.form_register .a{
+    margin: 5px 0;
+    padding: 25px 0;
+}
+
+.form_register a{
+    background-color: #008CBA;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+.form_register a:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #008CBA;
+}
+/* -------------- -------------- -------------- */
+
+/* -------------- -------------- -------------- */
+/* PRODUCTS */
+.products_a_div{
+    margin: 15px 0;
+}
+
+.products_a{
+    background-color: #008CBA;
+    color: white;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+.products_a:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #008CBA;
+}
+/* -------------- -------------- -------------- */

@@ -1,0 +1,82 @@
+<table class="table_products">
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th></th>
+    </thead>
+    <tbody>
+        {{#each products }}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.stock}}</td>
+            {{#if ../admin }}
+            <td>
+                <button><a href="/product_update/{{this._id}}">Update</a></button>
+                <button onclick="deleteMethod('{{this._id}}')">Delete</button>
+            </td>
+            {{else}}
+            <td>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity_input_{{this._id}}" name="quantity" value="1">
+                <input type="text" id="owner_input_{{this._id}}" name="owner" value="{{this.owner}}" hidden="hidden">
+                <button onclick="addItemPut('{{../cart}}', '{{this._id}}')">Add to Cart</button>
+                {{#if (equals this.owner ../_id)}}
+                <button><a href="/product_update/{{this._id}}">Update</a></button>
+                <button onclick="deleteMethod('{{this._id}}', '{{this.owner}}')">Delete</button>
+                {{/if}}
+            </td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+<div class="products_a_div">
+    <a href="/profile" class="products_a">Go to Profile</a>
+</div>
+
+
+{{#unless admin}}
+{{#if fullCart}}
+<div>
+    <h1>CART</h1>
+    <button onclick="wipeCart('{{this.cart}}')">Wipe Cart</button>
+</div>
+
+<table class="table_cart">
+    <thead>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th></th>
+    </thead>
+    <tbody>
+        {{#each fullCart}}
+        <tr>
+            <td>{{this.product_name}}</td>
+            <td>
+                <span id="span_quantity_{{this.product_id}}">{{this.quantity}}</span>
+                <button onclick="updateQuantity('{{../cart}}', '{{this.product_id}}', '1')"><span class="arrow_up"></span></button>
+                <button onclick="updateQuantity('{{../cart}}', '{{this.product_id}}', '-1')"><span class="arrow_down"></span></button>
+            </td>
+            <td>{{this.price}}</td>
+            <td>
+                <button onclick="removeItem('{{../cart}}', '{{this.product_id}}')">Remove Item</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{#unless admin}}
+<form action="/cart/{{cart}}/purchase" method="POST">
+    <button type="submit">Buy</button>
+</form>
+{{/unless}}
+{{/if}}
+{{/unless}}
